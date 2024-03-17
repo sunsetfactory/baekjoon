@@ -3,18 +3,30 @@
 #define cin std::cin
 #define cout std::cout
 #define endl std::endl
+#define string std::string
 
 int main() {
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
-    int max = arr[0];
-    int min = arr[0];
-    for (int i = 0; i < n; i++) {
-        if (arr[i] > max) max = arr[i];
-        if (arr[i] < min) min = arr[i];
+    string a, b;
+    int cnt_a[26] = {0};
+    int cnt_b[26] = {0};
+    int result = 0;
+
+    cin >> a >> b;
+
+    for (int i = 0; i < a.size(); i++) {
+        cnt_a[a[i] - 'a']++;
     }
-    cout << max - min << endl;
+
+    for (int i = 0; i < b.size(); i++) {
+        cnt_b[b[i] - 'a']++;
+    }
+
+    for (int i = 0; i < 26; i++) {
+        if (cnt_a[i] > cnt_b[i])
+            result += cnt_a[i] - cnt_b[i];
+        if (cnt_a[i] < cnt_b[i])
+            result += cnt_b[i] - cnt_a[i];
+    }
+    cout << result << endl;
     return 0;
 }
