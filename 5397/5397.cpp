@@ -1,42 +1,47 @@
 #include <iostream>
-#include <bits/stdc++.h>
+#include <list>
 #define cin std::cin
 #define cout std::cout
 #define endl std::endl
 #define string std::string
 #define list std::list
 
-int main() {
-    int n;
-    cin >> n;
-    string s[n];
-    list<char> l = {};
 
-    for (int i = 0; i < n; i++) {
-        cin >> s[i];
-        list<char>::iterator it = l.begin();
-        for (int j = 0; j < s[i].size(); j++) {
-            if (s[i][j] == '<') {
-                if (it != l.begin()) {
-                    it--;
-                }
-            } else if (s[i][j] == '>') {
-                if (it != l.end()) {
-                    it++;
-                }
-            } else if (s[i][j] == '-') {
-                if (it != l.begin()) {
-                    it--;
-                    it = l.erase(it);
-                }
-            } else {
-                l.insert(it, s[i][j]);
+int main(){
+
+    int N;
+    string s;
+ 
+    cin >> N;
+
+    list<char>::iterator it;
+    list<char> password;
+
+    for(int i = 0 ; i < N ; ++i){
+        
+        cin >> s;    
+
+        password.clear();
+        it = password.begin();    
+        
+        for(int j = 0 ; j < s.length(); ++j){
+            if(s[j] =='<') {
+                if(it != password.begin()) it--;
             }
+            else if(s[j]=='>'){
+                if( it != password.end()) it++;
+            }
+            else if(s[j]=='-'){
+                if(it != password.begin()) it = password.erase(--it);
+            }
+            else{
+                it = password.insert(it,s[j]);
+                it++;
+            }   
         }
-    }
-    for (int i = l.size() - 1; i > 0; i--) {
-        cout << l.front();
-        l.pop_front();
+
+        for(char x : password) cout << x;
+        cout << endl;
     }
     return 0;
 }
