@@ -45,9 +45,12 @@ int main(){
                     break;
             }
         }
-        for ()
-        // for(char x : l)
-        //     cout << x;
+        while (!l.empty())
+        {
+            cout << l.front();
+            l.pop_front();
+        }
+        
         cout << endl;
     }
     return 0;
