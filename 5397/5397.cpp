@@ -23,7 +23,7 @@ int main(){
 
         password.clear();
         it = password.begin();    
-        
+
         for(int j = 0 ; j < s.length(); ++j){
             if(s[j] =='<') {
                 if(it != password.begin()) it--;
