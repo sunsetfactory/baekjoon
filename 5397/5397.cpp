@@ -26,21 +26,26 @@ int main(){
 
         for(int j = 0 ; j < s.length(); ++j){
             if(s[j] =='<') {
-                if(it != password.begin()) it--;
+                if(it != password.begin())
+                    it--;
             }
             else if(s[j]=='>'){
-                if( it != password.end()) it++;
+                if( it != password.end())
+                    it++;
             }
             else if(s[j]=='-'){
-                if(it != password.begin()) it = password.erase(--it);
+                if(it != password.begin())
+                    it = password.erase(--it);
             }
             else{
                 it = password.insert(it,s[j]);
                 it++;
-            }   
+            }
+            for(char x : password)
+                cout << x;
         }
-
-        for(char x : password) cout << x;
+        for(char x : password)
+            cout << x;
         cout << endl;
     }
     return 0;
