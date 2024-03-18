@@ -43,6 +43,7 @@ int main(){
             }
             for(char x : password)
                 cout << x;
+            cout << endl;
         }
         for(char x : password)
             cout << x;
