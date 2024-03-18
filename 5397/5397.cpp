@@ -10,14 +10,29 @@ int main() {
     int n;
     cin >> n;
     string s[n];
-    list<string> l;
+    list<string> l = {};
 
     for (int i = 0; i < n; i++) {
-        string s;
-        cin >> s;
+        cin >> s[i];
     }
     for (int i = 0; i < n; i++) {
-        cout << s[i] << endl;
+        for (int j = 0; j < s[i].size(); j++) {
+            if (s[i][j] == '<') {
+                if (l.size() != 0) {
+                    l.pop_back();
+                }
+            } else if (s[i][j] == '>') {
+                if (l.size() != 0) {
+                    l.pop_front();
+                }
+            } else if (s[i][j] == '-') {
+                if (l.size() != 0) {
+                    l.pop_back();
+                }
+            } else {
+                l.push_back(s[i][j]);
+            }
+        }
     }
     return 0;
 }
