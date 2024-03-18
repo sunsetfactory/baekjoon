@@ -10,19 +10,15 @@ int main(){
 
     int N;
     string s;
+    list<char> l;
+    list<char>::iterator cursor;
  
     cin >> N;
-
-    list<char>::iterator cursor;
-    list<char> l;
-
     for(int i = 0 ; i < N ; ++i){
         s.clear();
-        cin >> s;    
-
+        cin >> s;
         l.clear();
         cursor = l.begin();    
-
         for(int j = 0 ; j < s.length(); ++j){
             switch (s[j]) {
                 case '<':
