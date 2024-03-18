@@ -6,7 +6,6 @@
 #define string std::string
 #define list std::list
 
-
 int main(){
 
     int N;
@@ -24,17 +23,25 @@ int main(){
         it = password.begin();    
 
         for(int j = 0 ; j < s.length(); ++j){
-            if(s[j] =='<' && it != password.begin())
-                it--;
-            else if(s[j]=='>' && it != password.end())
-                it++;
-            else if(s[j]=='-' && it != password.begin()){
-                it--;
-                it = password.erase(it);
-            }
-            else{
-                it = password.insert(it,s[j]);
-                it++;
+            switch(s[j]) {
+                case '<':
+                    if(it != password.begin())
+                        it--;
+                    break;
+                case '>':
+                    if(it != password.end())
+                        it++;
+                    break;
+                case '-':
+                    if(it != password.begin()){
+                        it--;
+                        it = password.erase(it);
+                    }
+                    break;
+                default:
+                    it = password.insert(it,s[j]);
+                    it++;
+                    break;
             }
         }
         for(char x : password)
