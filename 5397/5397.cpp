@@ -34,8 +34,9 @@ int main() {
             }
         }
     }
-    for (auto i : l) {
-        cout << i;
+    for (int i = l.size() - 1; i > 0; i--) {
+        cout << l.front();
+        l.pop_front();
     }
     return 0;
 }
