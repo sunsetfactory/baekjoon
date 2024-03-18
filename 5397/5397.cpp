@@ -13,40 +13,41 @@ int main(){
  
     cin >> N;
 
-    list<char>::iterator it;
-    list<char> password;
+    list<char>::iterator cursor;
+    list<char> l;
 
     for(int i = 0 ; i < N ; ++i){
         s.clear();
         cin >> s;    
 
-        password.clear();
-        it = password.begin();    
+        l.clear();
+        cursor = l.begin();    
 
         for(int j = 0 ; j < s.length(); ++j){
-            switch(s[j]) {
+            switch (s[j]) {
                 case '<':
-                    if(it != password.begin())
-                        it--;
+                    if(cursor != l.begin())
+                        cursor--;
                     break;
                 case '>':
-                    if(it != password.end())
-                        it++;
+                    if(cursor != l.end())
+                        cursor++;
                     break;
                 case '-':
-                    if(it != password.begin()){
-                        it--;
-                        it = password.erase(it);
+                    if(cursor != l.begin()){
+                        cursor--;
+                        cursor = l.erase(cursor);
                     }
                     break;
                 default:
-                    it = password.insert(it,s[j]);
-                    it++;
+                    cursor = l.insert(cursor,s[j]);
+                    cursor++;
                     break;
             }
         }
-        for(char x : password)
-            cout << x;
+        for ()
+        // for(char x : l)
+        //     cout << x;
         cout << endl;
     }
     return 0;
