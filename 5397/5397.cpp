@@ -45,12 +45,10 @@ int main(){
                     break;
             }
         }
-        while (!l.empty())
-        {
+        while (!l.empty()){
             cout << l.front();
             l.pop_front();
         }
-        
         cout << endl;
     }
     return 0;
