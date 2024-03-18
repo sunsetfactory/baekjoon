@@ -10,29 +10,32 @@ int main() {
     int n;
     cin >> n;
     string s[n];
-    list<string> l = {};
+    list<char> l = {};
 
     for (int i = 0; i < n; i++) {
         cin >> s[i];
-    }
-    for (int i = 0; i < n; i++) {
+        list<char>::iterator it = l.begin();
         for (int j = 0; j < s[i].size(); j++) {
             if (s[i][j] == '<') {
-                if (l.size() != 0) {
-                    l.pop_back();
+                if (it != l.begin()) {
+                    it--;
                 }
             } else if (s[i][j] == '>') {
-                if (l.size() != 0) {
-                    l.pop_front();
+                if (it != l.end()) {
+                    it++;
                 }
             } else if (s[i][j] == '-') {
-                if (l.size() != 0) {
-                    l.pop_back();
+                if (it != l.begin()) {
+                    it--;
+                    it = l.erase(it);
                 }
             } else {
-                l.push_back(s[i][j]);
+                l.insert(it, s[i][j]);
             }
         }
+    }
+    for (auto i : l) {
+        cout << i;
     }
     return 0;
 }
