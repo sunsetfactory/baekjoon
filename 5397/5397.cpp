@@ -45,6 +45,7 @@ int main(){
                 cout << x;
             cout << endl;
         }
+        cout << "result :" ;
         for(char x : password)
             cout << x;
         cout << endl;
