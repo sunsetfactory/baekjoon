@@ -21,31 +21,22 @@ int main(){
         
         cin >> s;    
 
-        password.clear();
         it = password.begin();    
 
         for(int j = 0 ; j < s.length(); ++j){
-            if(s[j] =='<') {
-                if(it != password.begin())
-                    it--;
-            }
-            else if(s[j]=='>'){
-                if( it != password.end())
-                    it++;
-            }
-            else if(s[j]=='-'){
-                if(it != password.begin())
-                    it = password.erase(--it);
+            if(s[j] =='<' && it != password.begin())
+                it--;
+            else if(s[j]=='>' && it != password.end())
+                it++;
+            else if(s[j]=='-' && it != password.begin()){
+                it--;
+                it = password.erase(it);
             }
             else{
                 it = password.insert(it,s[j]);
                 it++;
             }
-            for(char x : password)
-                cout << x;
-            cout << endl;
         }
-        cout << "result :" ;
         for(char x : password)
             cout << x;
         cout << endl;
