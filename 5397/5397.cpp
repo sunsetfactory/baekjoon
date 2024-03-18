@@ -17,9 +17,10 @@ int main(){
     list<char> password;
 
     for(int i = 0 ; i < N ; ++i){
-        
+        s.clear();
         cin >> s;    
 
+        password.clear();
         it = password.begin();    
 
         for(int j = 0 ; j < s.length(); ++j){
