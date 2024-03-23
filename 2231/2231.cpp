@@ -6,15 +6,16 @@ int main()
 {
     int n;
     int sum = 0;
+    int temp = 0;
     cin >> n;
     for (int i = 1; i <= n; i++)
     {
         sum = i;
-        while (i)
+        temp = i;
+        while (temp > 0)
         {
-            sum += i % 10;
-            i /= 10;
-            printf("sum: %d\n", sum);
+            sum += temp % 10;
+            temp /= 10;
         }
         if (sum == n)
         {
@@ -23,4 +24,5 @@ int main()
         }
     }
     cout << 0 << endl;
+    return 0;
 }
