@@ -13,13 +13,17 @@ int main()
         {
             n /= 3;
         }
-        else if (n % 2 == 0)
+        else
+        {
+            n--;
+        }
+        if (n % 2 == 0)
         {
             n /= 2;
         }
         else
         {
-            n -= 1;
+            n--;
         }
         cnt++;
     }
