@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
     int n;
-    int cnt = 0;
+    double cnt = 0.01;
     cin >> n;
 
     while (n > 0)
@@ -21,6 +21,7 @@ int main()
         n -= THREE;
         cnt++;
     }
+    cout.precision(1);
     if (n < 0)
         cout << -1 << endl;
     else
