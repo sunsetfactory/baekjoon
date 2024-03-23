@@ -12,20 +12,25 @@ int main()
         if (n % 3 == 0)
         {
             n /= 3;
+            cnt++;
+            continue;
         }
         else
         {
             n--;
+            cnt++;
+            continue;
         }
         if (n % 2 == 0)
         {
             n /= 2;
+            cnt++;
         }
         else
         {
             n--;
+            cnt++;
         }
-        cnt++;
     }
     cout << cnt << endl;
 }
