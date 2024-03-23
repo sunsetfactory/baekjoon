@@ -5,8 +5,8 @@ using namespace std;
 int main()
 {
     int n;
-    int sum = 0;
-    int temp = 0;
+    int sum;
+    int temp;
     cin >> n;
     for (int i = 1; i <= n; i++)
     {
