@@ -1,29 +1,30 @@
-#include <stdio.h>
+#include <cmath>
+#include <iostream>
 
-int pnchk(int n){
-    int i;
+using namespace std;
 
-    if (n < 2){
-        return (0);
+int main()
+{
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
     }
-    i = 2;
-    while (i < n){
-        if ((n % i) == 0)
-            return(0);
-        i++;
+    int primeCount = n;
+    for (int i = 0; i < n; i++)
+    {
+        primeCount -= (arr[i] == 1);
+        for (int j = 2; j <= sqrt(arr[i]); j++)
+        {
+            if (arr[i] % j == 0)
+            {
+                primeCount--;
+                break;
+            }
+        }
     }
-    return(1);
-}
-
-int main (){
-    int n, pn, cnt = 0;
-    scanf("%d", &n);
-
-    while (n){
-        scanf("%d", &pn);
-        if (pnchk(pn))
-            cnt++;
-        n--;
-    }
-    printf("%d", cnt);
+    cout << primeCount << endl;
+    return 0;
 }
