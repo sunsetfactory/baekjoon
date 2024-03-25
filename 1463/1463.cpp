@@ -1,36 +1,23 @@
+#include <algorithm>
 #include <iostream>
-
+#include <vector>
 using namespace std;
 
-int main()
-{
+int main() {
     int n;
-    int cnt = 0;
     cin >> n;
-    while (n != 1)
-    {
-        if (n % 3 == 0)
-        {
-            n /= 3;
-            cnt++;
-            continue;
-        }
-        else
-        {
-            n--;
-            cnt++;
-            continue;
-        }
-        if (n % 2 == 0)
-        {
-            n /= 2;
-            cnt++;
-        }
-        else
-        {
-            n--;
-            cnt++;
-        }
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+
+    sort(v.begin(), v.end());
+
+    int m;
+    cin >> m;
+    for (int i = 0; i < m; i++) {
+        int x;
+        cin >> x;
+        cout << binary_search(v.begin(), v.end(), x) << '\n';
     }
-    cout << cnt << endl;
+
+    return 0;
 }
