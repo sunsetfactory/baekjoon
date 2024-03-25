@@ -3,18 +3,12 @@
 #include <vector>
 using namespace std;
 
+int dp[1000001];
+
 int main()
 {
     int n;
     cin >> n;
 
-    for (int i = 1; i <= n; i++)
-    {
-        if (i == 1)
-        {
-            continue;
-        }
-    }
-
-    return 0;
+    solve(n, dp
 }
