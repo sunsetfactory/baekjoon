@@ -8,7 +8,7 @@ int main()
     int first_digit, last_digit;
     int temp;
     int digit;
-    int n_digit = 1;
+    int n_digit;
     int sign = 0;
 
     while (1)
@@ -20,14 +20,17 @@ int main()
         {
             temp = n;
             digit = 0;
+            n_digit = 1;
             while (temp > 9)
             {
                 temp /= 10;
-                n_digit * 10;
+                n_digit *= 10;
             }
-            n_digit * temp; cout << n_digit << " " << temp << endl;
-            first_digit = temp; cout << first_digit << endl;
-            last_digit = n % 10; cout << last_digit << endl;
+            cout << "n_dgit : " << n_digit << " temp : " << temp << endl;
+            n_digit * temp;
+            first_digit = temp;
+            last_digit = n % 10;
+            cout << "firstd : " << first_digit << " lastd : " << last_digit << endl;
             n = n - n_digit;
             n = n / 10;
             if (first_digit != last_digit)
