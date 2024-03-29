@@ -11,8 +11,17 @@ int main()
         cin >> n;
         if (n == 0)
             break;
-        first_digit = n / 10;
-        last_digit = n % 10;
+        while (n < 10)
+        {
+            first_digit = n / 10;
+            last_digit = n % 10;
+            if (first_digit != last_digit)
+            {
+                cout << "no" << endl;
+                break;
+            }
+            n /= 100;
+        }
     }
     return 0;
 }
