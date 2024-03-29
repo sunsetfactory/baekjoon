@@ -11,16 +11,25 @@ int main()
         cin >> n;
         if (n == 0)
             break;
-        while (n < 10)
+        if (n < 10)
         {
-            first_digit = n / 10;
-            last_digit = n % 10;
-            if (first_digit != last_digit)
-            {
-                cout << "no" << endl;
-                break;
-            }
-            n /= 100;
+            cout << "yes" << endl;
+            break;
+        }
+        int temp = n;
+        last_digit = n % 10;
+        while (temp >= 10)
+        {
+            temp /= 10;
+        }
+        first_digit = temp;
+        if (first_digit == last_digit)
+        {
+            cout << "yes" << endl;
+        }
+        else
+        {
+            cout << "no" << endl;
         }
     }
     return 0;
