@@ -23,7 +23,6 @@ int main()
         while (n >= 10)
         {
             temp = n;
-            i = 0;
             while (temp >= 10)
             {
                 temp = temp / 10;
@@ -41,7 +40,8 @@ int main()
                 num *= 10;
                 digit--;
             }
-            n = n - (first_digit * 10);
+            n = n - (first_digit * num);
+            cout << n << " " << first_digit * num << endl;
             n = n / 10;
         }
         if (n < 10)
