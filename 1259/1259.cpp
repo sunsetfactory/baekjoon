@@ -16,9 +16,9 @@ int main()
         cin >> n;
         if (n == 0)
             break;
+        sign = 0;
         while (n >= 10)
         {
-            sign = 0;
             temp = n;
             digit = 0;
             n_digit = 1;
@@ -31,14 +31,12 @@ int main()
             first_digit = temp;
             last_digit = n % 10;
             n = n - n_digit;
-            cout << n << endl;
             n = n / 10;
-            cout << n << endl;
             if (first_digit != last_digit)
             {
                 cout << "no" << endl;
                 sign = 1;
-                break ;
+                break;
             }
         }
         if (n < 10 && sign == 0)
