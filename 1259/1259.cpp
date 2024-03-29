@@ -15,34 +15,27 @@ int main()
         cin >> n;
         if (n == 0)
             break;
-        if (n < 10)
-        {
-            cout << "yes" << endl;
-            break;
-        }
         while (n >= 10)
         {
             temp = n;
-            while (temp >= 10)
+            digit = 0;
+            while (temp > 0)
             {
-                temp = temp / 10;
+                temp /= 10;
                 digit++;
+                cout << "digit: " << digit << endl;
             }
-            first_digit = n / 10;
+            first_digit = temp;
             last_digit = n % 10;
+            n = n % num;
+            n = n / 10;
+            num = 1;
+
             if (first_digit != last_digit)
             {
                 cout << "no" << endl;
                 break;
             }
-            while (digit > 0)
-            {
-                num *= 10;
-                digit--;
-            }
-            n = n - (first_digit * num);
-            cout << n << " " << first_digit * num << endl;
-            n = n / 10;
         }
         if (n < 10)
         {
