@@ -17,6 +17,8 @@ int main()
             cout << "yes" << endl;
             break;
         }
+        while (n < 0)
+        {
             temp = n;
             while (temp >= 10)
             {
@@ -24,7 +26,7 @@ int main()
             }
             first_digit = temp;
             last_digit = n % 10;
-            cout << first_digit << " " << last_digit << endl;
+        }
         if (first_digit == last_digit)
         {
             cout << "yes" << endl;
