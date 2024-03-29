@@ -13,10 +13,10 @@ int main()
 
     while (1)
     {
+        sign = 0;
         cin >> n;
         if (n == 0)
             break;
-        sign = 0;
         while (n >= 10)
         {
             temp = n;
