@@ -20,14 +20,14 @@ int main()
         {
             temp = n;
             digit = 0;
-            while (temp > 0)
+            while (temp > 9)
             {
                 temp /= 10;
                 n_digit * 10;
             }
-            n_digit * temp;
-            first_digit = temp;
-            last_digit = n % 10;
+            n_digit * temp; cout << n_digit << " " << temp << endl;
+            first_digit = temp; cout << first_digit << endl;
+            last_digit = n % 10; cout << last_digit << endl;
             n = n - n_digit;
             n = n / 10;
             if (first_digit != last_digit)
@@ -37,7 +37,7 @@ int main()
                 break ;
             }
         }
-        if (n < 10 && sign != 1)
+        if (n < 10 && sign == 0)
         {
             cout << "yes" << endl;
         }
