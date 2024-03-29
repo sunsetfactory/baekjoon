@@ -18,6 +18,7 @@ int main()
             break;
         while (n >= 10)
         {
+            sign = 0;
             temp = n;
             digit = 0;
             n_digit = 1;
@@ -26,13 +27,13 @@ int main()
                 temp /= 10;
                 n_digit *= 10;
             }
-            cout << "n_dgit : " << n_digit << " temp : " << temp << endl;
-            n_digit * temp;
+            n_digit *= temp;
             first_digit = temp;
             last_digit = n % 10;
-            cout << "firstd : " << first_digit << " lastd : " << last_digit << endl;
             n = n - n_digit;
+            cout << n << endl;
             n = n / 10;
+            cout << n << endl;
             if (first_digit != last_digit)
             {
                 cout << "no" << endl;
