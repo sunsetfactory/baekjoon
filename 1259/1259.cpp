@@ -6,6 +6,7 @@ int main()
 {
     int n;
     int first_digit, last_digit;
+    int temp;
     while (1)
     {
         cin >> n;
@@ -16,13 +17,14 @@ int main()
             cout << "yes" << endl;
             break;
         }
-        int temp = n;
-        last_digit = n % 10;
-        while (temp >= 10)
-        {
-            temp /= 10;
-        }
-        first_digit = temp;
+            temp = n;
+            while (temp >= 10)
+            {
+                temp /= 10;
+            }
+            first_digit = temp;
+            last_digit = n % 10;
+            cout << first_digit << " " << last_digit << endl;
         if (first_digit == last_digit)
         {
             cout << "yes" << endl;
