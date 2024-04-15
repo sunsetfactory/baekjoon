@@ -1,25 +1,24 @@
 #include <iostream>
-#include <string>
 
-using namespace std;
+int main(void)
+{
+    std::string s;
+    int count = 0;
+    int idx = 0;
 
-int main() {
-
-	string s;
-	int res = 1;
-
-	getline(cin, s);
-
-	if (s.length() == 1 && s[0] == ' ') {
-		cout << 0;
-		return 0;
-	}
-
-	for (int i = 1; i < s.length() - 1; i++) {
-		if (s[i] == ' ') res++;
-	}
-
-	cout << res;
-
-	return 0;
+    std::getline(std::cin, s);
+    if (s[0] != ' ')
+    {
+        while (s[idx] == ' ' && s[idx] != ' ')
+        {
+            idx++;
+        }
+        count++;
+    }
+    for (int i = idx; s[i] != '\0'; i++)
+    {
+        if (s[i] == ' ' && s[i + 1] != '\0' && s[i + 1] != ' ')
+            count++;
+    }
+    std::cout << count << std::endl;
 }
