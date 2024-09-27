@@ -3,7 +3,7 @@
 using namespace std;
 
 int cnt[4] = {4, 2, 1};
-int level[4] = {210, 220, 230, 240};
+int level[4] = {210, 220, 230};
 
 int main(void)
 {
@@ -14,7 +14,6 @@ int main(void)
 
 	for (int i = 0; i < 3; i++)
 	{
-		// cout << level[i] << " - " << N << " > " << cnt[i] << endl;
 		if ((level[i] - N) > cnt[i])
 		{
 			item = i + 1;
